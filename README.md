@@ -18,6 +18,7 @@ Comecei a aprender lógica de programação com C++ durante as aulas da Etec com
 - Listar todos os filmes cadastrados;
 - Criar salas de exibição e definir o preço do ingresso;
 - Listar salas disponíveis;
+- Deletar o filme caso tenha saído do catálogo;
 - Visualizar a folha de pagamento, que será efetuado após os pagamentos da clientela.
 
 ### 🎟️ Módulo de Cliente
