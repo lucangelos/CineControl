@@ -48,18 +48,25 @@ void adicionarFilme() {
 	if (f.avaliacao > 10) {
 		f.avaliacao = 10;
 	}
-	char resposta;
+	string resposta;
 	do {
-		cout << "\nO filme esta dublado? (S/N): ";
+		cout << "Responda com SIM ou NAO" << endl;
+		cout << "O filme esta dublado? ";
 		cin >> resposta;
-		if (resposta == 'S' || resposta == 's') {
+		if(resposta.empty()) continue;
+		
+		char opc = tolower(resposta[0]);
+		if (opc == 's') {
 			f.dublado = true;
-		} else if (resposta == 'N' || resposta == 'n') {
+			break;
+		} else if (opc == 'n') {
 			f.dublado = false;
+			break;
 		} else {
-			cout << "Opcao invalida! Digite apenas S ou N." << endl;
+			cout << "[ERROR] Valor invalido!" << endl;
+			cout << "Escreva APENAS sim ou nao.\n";
 		}
-	} while (resposta != 'S' && resposta != 's' && resposta != 'N' && resposta != 'n');
+	} while (true);
 	
 	f.id = filmes.size() + 1;
 	filmes.push_back(f);
@@ -122,7 +129,7 @@ void criarSala() {
 	}
 	
 	int idEscolhido;
-	cout << "Digite o ID do filme que sera adicionado nessa sala: ";
+	cout << "\nDigite o ID do filme que sera adicionado nessa sala: ";
 	cin >> idEscolhido;
 	
 	bool encontrado = true;
@@ -140,10 +147,11 @@ void criarSala() {
 		return;
 	}
 	
-	cout << "Preco do ingresso: ";
+	cout << "\nPreco do ingresso: ";
 	cin >> s.precoIngresso;
 	salas.push_back(s);
-	cout << "Sala criada com sucesso!";
+	cout << "Sala criada com sucesso!" << endl;
+	cout << "\n------------------------\n";
 }
 
 void listarSalas() {
@@ -152,7 +160,7 @@ void listarSalas() {
 		return;
 	}
 	for (auto &s : salas) {
-		cout << "--------------------------";
+		cout << "--------------------------" << endl;
 		cout << "ID da sala: " << s.id << endl;
 		cout << "Titulo do filme: " << s.tituloFilme << endl;
 		cout << "Preco do ingresso: " << s.precoIngresso << endl;
@@ -167,10 +175,10 @@ void pagamento() {
 		return;
 	}
 	cout << "----------------------" << endl;
-	cout << "-- SALAS DISPONIVEIS --";
+	cout << "-- SALAS DISPONIVEIS --" << endl;
 	listarSalas();
 	int idEscolhido;
-	cout << "Digite o ID da sala em que voce ira pegar: ";
+	cout << "\nDigite o ID da sala em que voce ira pegar: ";
 	cin >> idEscolhido;
 	bool encontrado = false;
 	for (auto &s : salas) {
@@ -193,22 +201,28 @@ void pagamento() {
 	float total = p.precoFinal();
 	cout << "Preco total: " << total << endl;
 	
-	char forma_pagamento;
-	cout << "Pagamento sera no debito (D) ou credito (C)?\n";
-	cin >> forma_pagamento;
+	string forma_pagamento;
 	do {
-    	if (forma_pagamento == 'D' || forma_pagamento == 'd') {
-    		p.debito = true;
-    	} else if (forma_pagamento == 'C' || forma_pagamento == 'c'){
-    		p.debito = false;
-    	} else {
-    	    cout << "[ERRO] Voce digitou um valor invalido" << endl;
-    	    cout << "Digite apenas D ou C" << endl;
-    	} 
-	} while (forma_pagamento == 'D' || forma_pagamento == 'd' || forma_pagamento == 'C' || forma_pagamento == 'c');
+    	cout << "Pagamento sera no debito ou credito?\n";
+		cin >> forma_pagamento;	
+		if (forma_pagamento.empty()) continue;
+		
+		char opc = tolower(forma_pagamento[0]);
+		if (opc == 'd') {
+			p.debito = true;
+			break;
+		} else if (opc == 'c') {
+			p.debito = false;
+			break;
+		} else {
+			cout << "[ERRO] Valor inválido!" << endl;
+			cout << "Digite apenas debito ou credito.\n";
+		}
+	} while (true);
 	pagamentos.push_back(p);
 	
 	cout << "Pagamento registrado com sucesso!" << endl;
+	cout << "\n------------------------\n";
 	cout << "Codigo: " << p.codigo << endl;
     cout << "Sala ID: " << p.idSala << endl;
     cout << "Total pago: R$" << total << endl;
