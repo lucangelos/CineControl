@@ -2,7 +2,7 @@
 
 Recebi um desafio do meu professor Kayã para fazer um projeto backend, e durante os dias 03 - 08 de novembro estive estudando e fazendo outros projetos para aprendizagem para chegar em um mais complexo, resultando no **CineControl**.
 Antes de explicar o que é o CineControl, irei explicar o por que eu escolhi a linguagem **C++** para fazer este projeto.
-Comecei a aprender lógica de programação com C++ durante as aulas da Etec com o professor Rafael Moura (excelente professor), através da aula dele eu tive um boom de interesse sobre programação backend. E ao receber o desafio, eu pensei em entregá-lo o mais rápido possível (evitando erros e falhas de interpretação), então cheguei a conclusão que C++ seria a linguagem mais adequada para esta proposta feita pelo professor Kayã.
+Comecei a aprender lógica de programação com C++ durante as aulas da Etec com o professor Rafael Moura (excelente professor), através das aulas dele eu tive um "boom" de interesse sobre programação backend. E ao receber o desafio, eu pensei em entregá-lo o mais rápido possível (evitando erros e falhas de interpretação), então cheguei a conclusão que C++ seria a linguagem mais adequada para esta proposta feita pelo professor Kayã.
 
 ## 💡 Explicação do projeto
 
