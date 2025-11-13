@@ -255,7 +255,7 @@ void administrador(){
 	int opc;
 	do {
 	
-	cout << "--- CINEMA ALEGRIA ---" << endl;
+	cout << "\n--- CINEMA ALEGRIA ---" << endl;
 	cout << "--  Todas opcoes  --" << endl;
 	cout << "1- Adicionar filme" << endl;
 	cout << "2- Listar filmes" << endl;
@@ -286,7 +286,7 @@ void cliente() {
 	int opc;
 	do {
 	
-	cout << "--- CINEMA ALEGRIA ---";
+	cout << "\n--- CINEMA ALEGRIA ---" << endl;
 	cout << "--  Todas opcoes  --" << endl;
 	cout << "1- Salas e Filmes disponiveis" << endl;
 	cout << "2- Pagar ingresso" << endl;
